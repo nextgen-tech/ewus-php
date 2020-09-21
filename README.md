@@ -28,6 +28,9 @@ composer require etermed/ewus
 // Create once handler instance
 $handler = new Handler(new HttpConnection());
 
+// (Optional) Enable sandbox mode for testing
+$handler->enableSandboxMode();
+
 // Login
 $request = new LoginRequest('15', 'TEST1', 'qwerty!@#');
 $login = $handler->handle($request);
