@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace Etermed\Ewus\Connections;
 
+use Etermed\Ewus\Contracts\Connection as ConnectionContract;
 use Etermed\Ewus\Contracts\Service as ServiceContract;
 
-abstract class Connection
+abstract class Connection implements ConnectionContract
 {
     /**
      * The connection service instance.
@@ -24,7 +25,7 @@ abstract class Connection
     /**
      * @inheritDoc
      */
-    public function setService(ServiceContract $service): self
+    public function setService(ServiceContract $service): ConnectionContract
     {
         $this->service = $service;
 
@@ -34,7 +35,7 @@ abstract class Connection
     /**
      * @inheritDoc
      */
-    public function setSandboxMode(bool $sandboxMode): self
+    public function setSandboxMode(bool $sandboxMode): ConnectionContract
     {
         $this->sandboxMode = $sandboxMode;
 
