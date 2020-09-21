@@ -18,7 +18,7 @@ final class Ewus
 {
     public const NAME = 'etermed/ewus - PHP implementation for eWUŚ service';
 
-    public const VERSION = '1.0.0';
+    public const VERSION = '0.0.1';
 
     /**
      * The connection instance.
