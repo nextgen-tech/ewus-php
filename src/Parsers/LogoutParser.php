@@ -14,7 +14,7 @@ class LogoutParser extends Parser implements ParserContract
     {
         $xml->registerNamespace('auth');
 
-        $response = new LogoutResponse($this->request);
+        $response = new LogoutResponse($this->request, $xml->getXml());
         $response->setLogoutMessage($this->parseLogoutMessage($xml));
 
         return $response;

@@ -14,7 +14,7 @@ class ChangePasswordParser extends Parser implements ParserContract
     {
         $xml->registerNamespace('auth');
 
-        $response = new ChangePasswordResponse($this->request);
+        $response = new ChangePasswordResponse($this->request, $xml->getXml());
         $response->setChangePasswordMessage($this->parseChangePasswordMessage($xml));
 
         return $response;

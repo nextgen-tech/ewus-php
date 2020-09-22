@@ -18,7 +18,7 @@ class CheckParser extends Parser implements ParserContract
     {
         $xml->registerNamespace('ewus');
 
-        $response = new CheckResponse($this->request);
+        $response = new CheckResponse($this->request, $xml->getXml());
 
         if (($operationDate = $this->parseOperationDate($xml)) !== null) {
             $response->setOperationDate($operationDate);

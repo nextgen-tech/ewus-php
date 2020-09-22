@@ -17,7 +17,7 @@ class LoginParser extends Parser implements ParserContract
 
         [$loginCode, $loginMessage] = $this->parseLoginData($xml);
 
-        $response = new LoginResponse($this->request);
+        $response = new LoginResponse($this->request, $xml->getXml());
 
         $response->setSessionId($this->parseSessionId($xml));
         $response->setToken($this->parseToken($xml));
