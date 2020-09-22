@@ -2,7 +2,7 @@
 
 ## v0.1.0 - 2020-09-22
 
-* Allow passing configuration to connection (d1c3a5c)
+* Allow passing configuration to connection (8d5375c)
 
 ## v0.0.2 - 2020-09-21
 
