@@ -9,6 +9,13 @@ use Etermed\Ewus\Contracts\Service as ServiceContract;
 abstract class Connection implements ConnectionContract
 {
     /**
+     * The connection configuration.
+     *
+     * @var  mixed[]
+     */
+    protected $config = [];
+
+    /**
      * The connection service instance.
      *
      * @var  \Etermed\Ewus\Contracts\Service
@@ -21,6 +28,16 @@ abstract class Connection implements ConnectionContract
      * @var  bool
      */
     protected $sandboxMode = false;
+
+    /**
+     * The connection constructor.
+     *
+     * @param  mixed[]  $config
+     */
+    public function __construct(array $config = [])
+    {
+        $this->config = $config;
+    }
 
     /**
      * @inheritDoc
