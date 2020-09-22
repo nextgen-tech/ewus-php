@@ -1,5 +1,9 @@
 # PHP eWUŚ changelog
 
+## v0.2.0 - 2020-09-22
+
+* Add raw XML data to responses (#1)
+
 ## v0.1.0 - 2020-09-22
 
 * Allow passing configuration to connection (8d5375c)
