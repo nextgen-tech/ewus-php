@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Traits;
+namespace NGT\Ewus\Traits;
 
-use Etermed\Ewus\Enums\OperatorDomain;
-use Etermed\Ewus\Enums\OperatorType;
-use Etermed\Ewus\Enums\OperatorTypeKey;
 use InvalidArgumentException;
+use NGT\Ewus\Enums\OperatorDomain;
+use NGT\Ewus\Enums\OperatorType;
+use NGT\Ewus\Enums\OperatorTypeKey;
 
 trait Authorizeable
 {

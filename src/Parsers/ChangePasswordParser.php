@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Parsers;
+namespace NGT\Ewus\Parsers;
 
-use Etermed\Ewus\Contracts\Parser as ParserContract;
-use Etermed\Ewus\Contracts\Response;
-use Etermed\Ewus\Responses\ChangePasswordResponse;
-use Etermed\Ewus\Support\Xml;
+use NGT\Ewus\Contracts\Parser as ParserContract;
+use NGT\Ewus\Contracts\Response;
+use NGT\Ewus\Responses\ChangePasswordResponse;
+use NGT\Ewus\Support\Xml;
 
 class ChangePasswordParser extends Parser implements ParserContract
 {

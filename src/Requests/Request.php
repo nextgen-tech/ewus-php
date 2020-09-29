@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Requests;
+namespace NGT\Ewus\Requests;
 
-use Etermed\Ewus\Contracts\Request as RequestContract;
+use NGT\Ewus\Contracts\Request as RequestContract;
 use Spatie\ArrayToXml\ArrayToXml;
 
 abstract class Request implements RequestContract

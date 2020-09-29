@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Connections;
+namespace NGT\Ewus\Connections;
 
-use Etermed\Ewus\Contracts\Connection as ConnectionContract;
-use Etermed\Ewus\Exceptions\ResponseException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\RequestOptions;
+use NGT\Ewus\Contracts\Connection as ConnectionContract;
+use NGT\Ewus\Exceptions\ResponseException;
 use Throwable;
 
 class HttpConnection extends Connection implements ConnectionContract

@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Contracts;
+namespace NGT\Ewus\Contracts;
 
 interface Response
 {
     /**
      * Get related request.
      *
-     * @return  \Etermed\Ewus\Contracts\Request
+     * @return  \NGT\Ewus\Contracts\Request
      */
     public function getRequest(): Request;
 

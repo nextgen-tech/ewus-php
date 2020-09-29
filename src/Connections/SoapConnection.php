@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Connections;
+namespace NGT\Ewus\Connections;
 
-use Etermed\Ewus\Contracts\Connection as ConnectionContract;
+use NGT\Ewus\Contracts\Connection as ConnectionContract;
 use SoapClient;
 
 class SoapConnection extends Connection implements ConnectionContract

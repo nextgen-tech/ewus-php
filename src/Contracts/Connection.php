@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Contracts;
+namespace NGT\Ewus\Contracts;
 
 interface Connection
 {
     /**
      * Set the connection service.
      *
-     * @param  \Etermed\Ewus\Contracts\Service  $service
+     * @param  \NGT\Ewus\Contracts\Service  $service
      */
     public function setService(Service $service): self;
 

@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Requests;
+namespace NGT\Ewus\Requests;
 
-use Etermed\Ewus\Contracts\Parser as ParserContract;
-use Etermed\Ewus\Contracts\Request as RequestContract;
-use Etermed\Ewus\Contracts\Service as ServiceContract;
-use Etermed\Ewus\Parsers\LogoutParser;
-use Etermed\Ewus\Services\AuthService;
-use Etermed\Ewus\Support\XmlNamespace;
 use InvalidArgumentException;
+use NGT\Ewus\Contracts\Parser as ParserContract;
+use NGT\Ewus\Contracts\Request as RequestContract;
+use NGT\Ewus\Contracts\Service as ServiceContract;
+use NGT\Ewus\Parsers\LogoutParser;
+use NGT\Ewus\Services\AuthService;
+use NGT\Ewus\Support\XmlNamespace;
 
 class LogoutRequest extends Request implements RequestContract
 {

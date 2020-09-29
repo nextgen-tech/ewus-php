@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Requests;
+namespace NGT\Ewus\Requests;
 
-use Etermed\Ewus\Contracts\Parser as ParserContract;
-use Etermed\Ewus\Contracts\Request as RequestContract;
-use Etermed\Ewus\Contracts\Service as ServiceContract;
-use Etermed\Ewus\Parsers\ChangePasswordParser;
-use Etermed\Ewus\Services\AuthService;
-use Etermed\Ewus\Support\XmlNamespace;
-use Etermed\Ewus\Traits\Authorizeable;
 use InvalidArgumentException;
+use NGT\Ewus\Contracts\Parser as ParserContract;
+use NGT\Ewus\Contracts\Request as RequestContract;
+use NGT\Ewus\Contracts\Service as ServiceContract;
+use NGT\Ewus\Parsers\ChangePasswordParser;
+use NGT\Ewus\Services\AuthService;
+use NGT\Ewus\Support\XmlNamespace;
+use NGT\Ewus\Traits\Authorizeable;
 
 class ChangePasswordRequest extends Request implements RequestContract
 {

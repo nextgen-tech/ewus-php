@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Enums;
+namespace NGT\Ewus\Enums;
 
 class CheckStatus
 {

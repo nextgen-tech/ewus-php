@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Connections;
+namespace NGT\Ewus\Connections;
 
-use Etermed\Ewus\Contracts\Connection as ConnectionContract;
-use Etermed\Ewus\Contracts\Service as ServiceContract;
+use NGT\Ewus\Contracts\Connection as ConnectionContract;
+use NGT\Ewus\Contracts\Service as ServiceContract;
 
 abstract class Connection implements ConnectionContract
 {
@@ -18,7 +18,7 @@ abstract class Connection implements ConnectionContract
     /**
      * The connection service instance.
      *
-     * @var  \Etermed\Ewus\Contracts\Service
+     * @var  \NGT\Ewus\Contracts\Service
      */
     protected $service;
 

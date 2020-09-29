@@ -1,20 +1,20 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus;
+namespace NGT\Ewus;
 
-use Etermed\Ewus\Contracts\Connection;
-use Etermed\Ewus\Contracts\Request;
-use Etermed\Ewus\Contracts\Response;
-use Etermed\Ewus\Exceptions\ResponseException;
-use Etermed\Ewus\Support\Xml;
+use NGT\Ewus\Contracts\Connection;
+use NGT\Ewus\Contracts\Request;
+use NGT\Ewus\Contracts\Response;
+use NGT\Ewus\Exceptions\ResponseException;
+use NGT\Ewus\Support\Xml;
 
 final class Handler
 {
     /**
      * The connection instance.
      *
-     * @var  \Etermed\Ewus\Contracts\Connection
+     * @var  \NGT\Ewus\Contracts\Connection
      */
     protected $connection;
 
@@ -28,7 +28,7 @@ final class Handler
     /**
      * The handler constructor.
      *
-     * @param  \Etermed\Ewus\Contracts\Connection|null  $connection
+     * @param  \NGT\Ewus\Contracts\Connection|null  $connection
      * @param  bool $sandboxMode
      */
     public function __construct(Connection $connection = null, bool $sandboxMode = false)
@@ -57,7 +57,7 @@ final class Handler
     /**
      * Set connection for handler.
      *
-     * @param  \Etermed\Ewus\Contracts\Connection  $connection
+     * @param  \NGT\Ewus\Contracts\Connection  $connection
      * @return self
      */
     public function setConnection(Connection $connection): self
@@ -70,9 +70,9 @@ final class Handler
     /**
      * Handle request and turn it into response.
      *
-     * @param   \Etermed\Ewus\Contracts\Request  $request
-     * @return  \Etermed\Ewus\Contracts\Response
-     * @throws  \Etermed\Ewus\Exceptions\ResponseException
+     * @param   \NGT\Ewus\Contracts\Request  $request
+     * @return  \NGT\Ewus\Contracts\Response
+     * @throws  \NGT\Ewus\Exceptions\ResponseException
      */
     public function handle(Request $request): Response
     {
@@ -88,8 +88,8 @@ final class Handler
     /**
      * Send request.
      *
-     * @param   \Etermed\Ewus\Contracts\Request  $request
-     * @return  \Etermed\Ewus\Support\Xml
+     * @param   \NGT\Ewus\Contracts\Request  $request
+     * @return  \NGT\Ewus\Support\Xml
      */
     protected function send(Request $request): Xml
     {

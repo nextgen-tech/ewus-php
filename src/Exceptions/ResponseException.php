@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Exceptions;
+namespace NGT\Ewus\Exceptions;
 
-use Etermed\Ewus\Enums\ExceptionType;
-use Etermed\Ewus\Support\Xml;
+use NGT\Ewus\Enums\ExceptionType;
+use NGT\Ewus\Support\Xml;
 
 class ResponseException extends EwusException
 {
@@ -42,8 +42,8 @@ class ResponseException extends EwusException
     /**
      * Transform XML into exception.
      *
-     * @param   \Etermed\Ewus\Support\Xml     $xml
-     * @return  \Etermed\Ewus\Exceptions\ResponseException
+     * @param   \NGT\Ewus\Support\Xml     $xml
+     * @return  \NGT\Ewus\Exceptions\ResponseException
      */
     public static function fromXml(Xml $xml): self
     {
@@ -57,7 +57,7 @@ class ResponseException extends EwusException
     /**
      * Get error message from response.
      *
-     * @param   \Etermed\Ewus\Support\Xml     $xml
+     * @param   \NGT\Ewus\Support\Xml     $xml
      * @return  string
      */
     private static function getErrorMessage(Xml $xml): string
@@ -74,7 +74,7 @@ class ResponseException extends EwusException
     /**
      * Get error type from response.
      *
-     * @param   \Etermed\Ewus\Support\Xml     $xml
+     * @param   \NGT\Ewus\Support\Xml     $xml
      * @return  string
      */
     private static function getErrorType(Xml $xml): string

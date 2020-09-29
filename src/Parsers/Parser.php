@@ -1,23 +1,23 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Parsers;
+namespace NGT\Ewus\Parsers;
 
-use Etermed\Ewus\Contracts\Request as RequestContract;
+use NGT\Ewus\Contracts\Request as RequestContract;
 
 abstract class Parser
 {
     /**
      * The related request instance.
      *
-     * @var  \Etermed\Ewus\Contracts\Request
+     * @var  \NGT\Ewus\Contracts\Request
      */
     protected $request;
 
     /**
      * The parser constructor.
      *
-     * @param  \Etermed\Ewus\Contracts\Request  $request
+     * @param  \NGT\Ewus\Contracts\Request  $request
      */
     public function __construct(RequestContract $request)
     {

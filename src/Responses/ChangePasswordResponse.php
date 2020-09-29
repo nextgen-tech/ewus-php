@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Responses;
+namespace NGT\Ewus\Responses;
 
-use Etermed\Ewus\Contracts\Response as ResponseContract;
+use NGT\Ewus\Contracts\Response as ResponseContract;
 
 class ChangePasswordResponse extends Response implements ResponseContract
 {

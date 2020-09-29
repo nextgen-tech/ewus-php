@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Services;
+namespace NGT\Ewus\Services;
 
-use Etermed\Ewus\Contracts\Service;
+use NGT\Ewus\Contracts\Service;
 
 class BrokerService implements Service
 {

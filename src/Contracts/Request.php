@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Contracts;
+namespace NGT\Ewus\Contracts;
 
 use Exception;
 
@@ -18,14 +18,14 @@ interface Request
     /**
      * The response XML parser.
      *
-     * @return  \Etermed\Ewus\Contracts\Parser
+     * @return  \NGT\Ewus\Contracts\Parser
      */
     public function getParser(): Parser;
 
     /**
      * The service instance.
      *
-     * @return  \Etermed\Ewus\Contracts\Service
+     * @return  \NGT\Ewus\Contracts\Service
      */
     public function getService(): Service;
 }

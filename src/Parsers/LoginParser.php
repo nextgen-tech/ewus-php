@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Parsers;
+namespace NGT\Ewus\Parsers;
 
-use Etermed\Ewus\Contracts\Parser as ParserContract;
-use Etermed\Ewus\Contracts\Response;
-use Etermed\Ewus\Responses\LoginResponse;
-use Etermed\Ewus\Support\Xml;
 use Exception;
+use NGT\Ewus\Contracts\Parser as ParserContract;
+use NGT\Ewus\Contracts\Response;
+use NGT\Ewus\Responses\LoginResponse;
+use NGT\Ewus\Support\Xml;
 
 class LoginParser extends Parser implements ParserContract
 {
@@ -52,7 +52,7 @@ class LoginParser extends Parser implements ParserContract
     /**
      * Get login data (code and message).
      *
-     * @param   \Etermed\Ewus\Support\Xml  $xml
+     * @param   \NGT\Ewus\Support\Xml  $xml
      * @return  string[]
      */
     private function parseLoginData(Xml $xml): array

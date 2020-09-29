@@ -1,17 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Requests;
+namespace NGT\Ewus\Requests;
 
 use DateTimeInterface;
-use Etermed\Ewus\Contracts\Parser as ParserContract;
-use Etermed\Ewus\Contracts\Request as RequestContract;
-use Etermed\Ewus\Contracts\Service as ServiceContract;
-use Etermed\Ewus\Ewus;
-use Etermed\Ewus\Parsers\CheckParser;
-use Etermed\Ewus\Services\BrokerService;
-use Etermed\Ewus\Support\XmlNamespace;
 use InvalidArgumentException;
+use NGT\Ewus\Contracts\Parser as ParserContract;
+use NGT\Ewus\Contracts\Request as RequestContract;
+use NGT\Ewus\Contracts\Service as ServiceContract;
+use NGT\Ewus\Ewus;
+use NGT\Ewus\Parsers\CheckParser;
+use NGT\Ewus\Services\BrokerService;
+use NGT\Ewus\Support\XmlNamespace;
 
 class CheckRequest extends Request implements RequestContract
 {

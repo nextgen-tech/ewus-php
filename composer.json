@@ -1,11 +1,11 @@
 {
-    "name": "etermed/ewus",
+    "name": "ngt/ewus",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Krzysztof Grabania",
-            "email": "krzysztof.grabania@etermed.pl"
+            "email": "info@nextgen-tech.pl"
         }
     ],
     "require": {
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Etermed\\Ewus\\": "src/"
+            "NGT\\Ewus\\": "src/"
         }
     }
 }

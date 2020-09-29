@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus\Contracts;
+namespace NGT\Ewus\Contracts;
 
 interface Service
 {

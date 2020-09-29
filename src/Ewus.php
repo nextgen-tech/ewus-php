@@ -1,29 +1,29 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Ewus;
+namespace NGT\Ewus;
 
-use Etermed\Ewus\Connections\HttpConnection;
-use Etermed\Ewus\Contracts\Connection;
-use Etermed\Ewus\Requests\ChangePasswordRequest;
-use Etermed\Ewus\Requests\CheckRequest;
-use Etermed\Ewus\Requests\LoginRequest;
-use Etermed\Ewus\Requests\LogoutRequest;
-use Etermed\Ewus\Responses\ChangePasswordResponse;
-use Etermed\Ewus\Responses\CheckResponse;
-use Etermed\Ewus\Responses\LoginResponse;
-use Etermed\Ewus\Responses\LogoutResponse;
+use NGT\Ewus\Connections\HttpConnection;
+use NGT\Ewus\Contracts\Connection;
+use NGT\Ewus\Requests\ChangePasswordRequest;
+use NGT\Ewus\Requests\CheckRequest;
+use NGT\Ewus\Requests\LoginRequest;
+use NGT\Ewus\Requests\LogoutRequest;
+use NGT\Ewus\Responses\ChangePasswordResponse;
+use NGT\Ewus\Responses\CheckResponse;
+use NGT\Ewus\Responses\LoginResponse;
+use NGT\Ewus\Responses\LogoutResponse;
 
 final class Ewus
 {
-    public const NAME = 'etermed/ewus - PHP implementation for eWUŚ service';
+    public const NAME = 'ngt/ewus - PHP implementation for eWUŚ service';
 
     public const VERSION = '0.2.0';
 
     /**
      * The connection instance.
      *
-     * @var  \Etermed\Ewus\Contracts\Connection
+     * @var  \NGT\Ewus\Contracts\Connection
      */
     private static $connection;
 
@@ -37,14 +37,14 @@ final class Ewus
     /**
      * The handler instance.
      *
-     * @var  \Etermed\Ewus\Handler
+     * @var  \NGT\Ewus\Handler
      */
     private static $handler;
 
     /**
      * Get connection instance.
      *
-     * @return  \Etermed\Ewus\Contracts\Connection
+     * @return  \NGT\Ewus\Contracts\Connection
      */
     private static function connection(): Connection
     {
@@ -58,7 +58,7 @@ final class Ewus
     /**
      * Get handler instance.
      *
-     * @return  \Etermed\Ewus\Handler
+     * @return  \NGT\Ewus\Handler
      */
     private static function handler(): Handler
     {
@@ -72,7 +72,7 @@ final class Ewus
     /**
      * Set connection type.
      *
-     * @param  \Etermed\Ewus\Contracts\Connection  $connection
+     * @param  \NGT\Ewus\Contracts\Connection  $connection
      * @return void
      */
     public static function setConnection(Connection $connection): void
@@ -98,8 +98,8 @@ final class Ewus
      * @param   string       $password      The operator password.
      * @param   string|null  $operatorId    The operator type code.
      * @param   string|null  $operatorType  The operator identificator.
-     * @return  \Etermed\Ewus\Responses\LoginResponse
-     * @throws  \Etermed\Ewus\Exceptions\ResponseException
+     * @return  \NGT\Ewus\Responses\LoginResponse
+     * @throws  \NGT\Ewus\Exceptions\ResponseException
      */
     public static function login(
         string $domain,
@@ -110,7 +110,7 @@ final class Ewus
     ): LoginResponse {
         $request = new LoginRequest($domain, $login, $password, $operatorId, $operatorType);
 
-        /** @var \Etermed\Ewus\Responses\LoginResponse */
+        /** @var \NGT\Ewus\Responses\LoginResponse */
         return self::handler()->handle($request);
     }
 
@@ -119,14 +119,14 @@ final class Ewus
      *
      * @param   string  $sessionId
      * @param   string  $token
-     * @return  \Etermed\Ewus\Responses\LogoutResponse
-     * @throws  \Etermed\Ewus\Exceptions\ResponseException
+     * @return  \NGT\Ewus\Responses\LogoutResponse
+     * @throws  \NGT\Ewus\Exceptions\ResponseException
      */
     public static function logout(string $sessionId, string $token): LogoutResponse
     {
         $request = new LogoutRequest($sessionId, $token);
 
-        /** @var \Etermed\Ewus\Responses\LogoutResponse */
+        /** @var \NGT\Ewus\Responses\LogoutResponse */
         return self::handler()->handle($request);
     }
 
@@ -141,8 +141,8 @@ final class Ewus
      * @param   string       $newPassword
      * @param   string|null  $operatorId
      * @param   string|null  $operatorType
-     * @return  \Etermed\Ewus\Responses\ChangePasswordResponse
-     * @throws  \Etermed\Ewus\Exceptions\ResponseException
+     * @return  \NGT\Ewus\Responses\ChangePasswordResponse
+     * @throws  \NGT\Ewus\Exceptions\ResponseException
      */
     public static function changePassword(
         string $sessionId,
@@ -156,7 +156,7 @@ final class Ewus
     ): ChangePasswordResponse {
         $request = new ChangePasswordRequest($sessionId, $token, $domain, $login, $oldPassword, $newPassword, $operatorId, $operatorType);
 
-        /** @var \Etermed\Ewus\Responses\ChangePasswordResponse */
+        /** @var \NGT\Ewus\Responses\ChangePasswordResponse */
         return self::handler()->handle($request);
     }
 
@@ -166,14 +166,14 @@ final class Ewus
      * @param   string  $sessionId
      * @param   string  $token
      * @param   string  $pesel
-     * @return  \Etermed\Ewus\Responses\CheckResponse
-     * @throws  \Etermed\Ewus\Exceptions\ResponseException
+     * @return  \NGT\Ewus\Responses\CheckResponse
+     * @throws  \NGT\Ewus\Exceptions\ResponseException
      */
     public static function check(string $sessionId, string $token, string $pesel): CheckResponse
     {
         $request = new CheckRequest($sessionId, $token, $pesel);
 
-        /** @var \Etermed\Ewus\Responses\CheckResponse */
+        /** @var \NGT\Ewus\Responses\CheckResponse */
         return self::handler()->handle($request);
     }
 }
