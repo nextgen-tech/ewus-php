@@ -19,7 +19,7 @@ This package requires ext-dom to be installed on server. Optionally HTTP connect
 ## Installation
 
 ```sh
-composer require ngt/ewus
+composer require nextgen-tech/ewus
 ```
 
 ## Usage
