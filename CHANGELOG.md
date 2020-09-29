@@ -1,5 +1,9 @@
 # PHP eWUŚ changelog
 
+## v0.3.0 - 2020-09-29
+
+* Change namespace
+
 ## v0.2.0 - 2020-09-22
 
 * Add raw XML data to responses (#1)
