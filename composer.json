@@ -25,5 +25,10 @@
         "psr-4": {
             "NGT\\Ewus\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     }
 }
