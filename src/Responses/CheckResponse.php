@@ -376,9 +376,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the expiration date of check.
      *
-     * @return  DateTimeInterface
+     * @return  DateTimeInterface|null
      */
-    public function getExpirationDate(): DateTimeInterface
+    public function getExpirationDate(): ?DateTimeInterface
     {
         return $this->expirationDate;
     }
@@ -386,9 +386,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the status of patient insurance.
      *
-     * @return  int
+     * @return  int|null
      */
-    public function getInsuranceStatus(): int
+    public function getInsuranceStatus(): ?int
     {
         return $this->insuranceStatus;
     }
@@ -396,9 +396,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the prescription symbol.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getPrescriptionSymbol(): string
+    public function getPrescriptionSymbol(): ?string
     {
         return $this->prescriptionSymbol;
     }
@@ -416,9 +416,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the patient first name.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getPatientFirstName(): string
+    public function getPatientFirstName(): ?string
     {
         return $this->patientFirstName;
     }
@@ -426,9 +426,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the patient last name.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getPatientLastName(): string
+    public function getPatientLastName(): ?string
     {
         return $this->patientLastName;
     }

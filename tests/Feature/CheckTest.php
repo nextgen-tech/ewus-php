@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use DateTime;
+use DateTimeInterface;
 use NGT\Ewus\Connections\HttpConnection;
 use NGT\Ewus\Enums\OperatorType;
 use NGT\Ewus\Handler;
@@ -63,8 +65,24 @@ class CheckTest extends TestCase
     {
         $response = $this->check('79060804378');
 
+        $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
+        /** @var DateTimeInterface */
+        $expirationDate = $response->getExpirationDate();
+
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertSame($expectedExpirationDate->format('Y-m-d H:i:s'), $expirationDate->format('Y-m-d H:i:s'));
         $this->assertSame(1, $response->getInsuranceStatus());
+        $this->assertSame('', $response->getPrescriptionSymbol());
+        $this->assertSame('79060804378', $response->getPatientPesel());
+        $this->assertSame('ImięTAK=2', $response->getPatientFirstName());
+        $this->assertSame('NazwiskoTAK', $response->getPatientLastName());
         $this->assertEmpty($response->getPatientNotes());
     }
 
@@ -72,8 +90,24 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00032948271');
 
+        $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
+        /** @var DateTimeInterface */
+        $expirationDate = $response->getExpirationDate();
+
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertSame($expectedExpirationDate->format('Y-m-d H:i:s'), $expirationDate->format('Y-m-d H:i:s'));
         $this->assertSame(1, $response->getInsuranceStatus());
+        $this->assertSame('', $response->getPrescriptionSymbol());
+        $this->assertSame('00032948271', $response->getPatientPesel());
+        $this->assertSame('ImięTAK', $response->getPatientFirstName());
+        $this->assertSame('NazwiskoTAK', $response->getPatientLastName());
 
         $notes = $response->getPatientNotes();
         $note  = $notes[0];
@@ -90,8 +124,24 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00102721595');
 
+        $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
+        /** @var DateTimeInterface */
+        $expirationDate = $response->getExpirationDate();
+
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertSame($expectedExpirationDate->format('Y-m-d H:i:s'), $expirationDate->format('Y-m-d H:i:s'));
         $this->assertSame(1, $response->getInsuranceStatus());
+        $this->assertSame('', $response->getPrescriptionSymbol());
+        $this->assertSame('00102721595', $response->getPatientPesel());
+        $this->assertSame('ImięTAK', $response->getPatientFirstName());
+        $this->assertSame('NazwiskoTAK', $response->getPatientLastName());
 
         $notes = $response->getPatientNotes();
         $note  = $notes[0];
@@ -108,8 +158,24 @@ class CheckTest extends TestCase
     {
         $response = $this->check('55021562501');
 
+        $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
+        /** @var DateTimeInterface */
+        $expirationDate = $response->getExpirationDate();
+
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertSame($expectedExpirationDate->format('Y-m-d H:i:s'), $expirationDate->format('Y-m-d H:i:s'));
         $this->assertSame(0, $response->getInsuranceStatus());
+        $this->assertSame('', $response->getPrescriptionSymbol());
+        $this->assertSame('55021562501', $response->getPatientPesel());
+        $this->assertSame('ImięNIE', $response->getPatientFirstName());
+        $this->assertSame('NazwiskoNIE', $response->getPatientLastName());
         $this->assertEmpty($response->getPatientNotes());
     }
 
@@ -117,8 +183,24 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00071274234');
 
+        $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
+        /** @var DateTimeInterface */
+        $expirationDate = $response->getExpirationDate();
+
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertSame($expectedExpirationDate->format('Y-m-d H:i:s'), $expirationDate->format('Y-m-d H:i:s'));
         $this->assertSame(0, $response->getInsuranceStatus());
+        $this->assertSame('', $response->getPrescriptionSymbol());
+        $this->assertSame('00071274234', $response->getPatientPesel());
+        $this->assertSame('ImięNIE', $response->getPatientFirstName());
+        $this->assertSame('NazwiskoNIE', $response->getPatientLastName());
 
         $notes = $response->getPatientNotes();
         $note  = $notes[0];
@@ -135,8 +217,24 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00092497177');
 
+        $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
+        /** @var DateTimeInterface */
+        $expirationDate = $response->getExpirationDate();
+
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertSame($expectedExpirationDate->format('Y-m-d H:i:s'), $expirationDate->format('Y-m-d H:i:s'));
         $this->assertSame(0, $response->getInsuranceStatus());
+        $this->assertSame('', $response->getPrescriptionSymbol());
+        $this->assertSame('00092497177', $response->getPatientPesel());
+        $this->assertSame('ImięNIE', $response->getPatientFirstName());
+        $this->assertSame('NazwiskoNIE', $response->getPatientLastName());
 
         $notes = $response->getPatientNotes();
         $note  = $notes[0];
@@ -149,29 +247,45 @@ class CheckTest extends TestCase
         );
     }
 
-    /**
-     * @todo Issue #2
-     * @link https://github.com/nextgen-tech/ewus-php/issues/2
-     */
     public function testCheckUnlisted(): void
     {
         $response = $this->check('01010153201');
 
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(0, $response->getStatus());
-        // $this->assertSame(null, $response->getInsuranceStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertNull($response->getExpirationDate());
+        $this->assertNull($response->getInsuranceStatus());
+        $this->assertNull($response->getPrescriptionSymbol());
+        $this->assertSame('01010153201', $response->getPatientPesel());
+        $this->assertNull($response->getPatientFirstName());
+        $this->assertNull($response->getPatientLastName());
         $this->assertEmpty($response->getPatientNotes());
     }
 
-    /**
-     * @todo Issue #2
-     * @link https://github.com/nextgen-tech/ewus-php/issues/2
-     */
     public function testCheckCancelled(): void
     {
         $response = $this->check('00060958187');
 
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(-1, $response->getStatus());
-        // $this->assertSame(null, $response->getInsuranceStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertNull($response->getExpirationDate());
+        $this->assertNull($response->getInsuranceStatus());
+        $this->assertNull($response->getPrescriptionSymbol());
+        $this->assertSame('00060958187', $response->getPatientPesel());
+        $this->assertNull($response->getPatientFirstName());
+        $this->assertNull($response->getPatientLastName());
         $this->assertEmpty($response->getPatientNotes());
     }
 }
