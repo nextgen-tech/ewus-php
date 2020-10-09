@@ -1,5 +1,7 @@
 # PHP eWUŚ
 
+[![Coverage Status](https://coveralls.io/repos/github/nextgen-tech/ewus-php/badge.svg?branch=master)](https://coveralls.io/github/nextgen-tech/ewus-php?branch=master)
+
 This package is PHP implementation of eWUŚ (Elektroniczna Weryfikacja Uprawnień Świadczeniobiorców). It has coded each available operation - login, logout, check patient status and change password. It is compliment with newest version (5.0), which contans additional information about patient (e.g. information about COVID-19 quarantine and isolation).
 
 ## ToC
