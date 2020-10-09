@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:auth="http://xml.kamsoft.pl/ws/kaas/login_types" xmlns:com="http://xml.kamsoft.pl/ws/common">
+  <soapenv:Header>
+    <com:session id="12345678"/>
+    <com:authToken id="qwertyuiop"/>
+  </soapenv:Header>
+  <soapenv:Body>
+    <auth:logout/>
+  </soapenv:Body>
+</soapenv:Envelope>

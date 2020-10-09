@@ -25,13 +25,6 @@ trait Authorizeable
     private $login;
 
     /**
-     * The operator password.
-     *
-     * @var  string
-     */
-    private $password;
-
-    /**
      * The operator type code.
      *
      * @var  string|null

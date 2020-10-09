@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header>
+      <ns1:session id="123456789" xmlns:ns1="http://xml.kamsoft.pl/ws/common"/>
+      <ns1:authToken id="qwertyuiop" xmlns:ns1="http://xml.kamsoft.pl/ws/common"/>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:loginReturn xmlns:ns1="http://xml.kamsoft.pl/ws/kaas/login_types">[000] U&amp;#380;ytkownik zosta&amp;#322; prawid&amp;#322;owo zalogowany.</ns1:loginReturn>
+   </soapenv:Body>
+</soapenv:Envelope>

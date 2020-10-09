@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace NGT\Ewus\Requests;
 
+use DateTime;
 use DateTimeInterface;
 use InvalidArgumentException;
 use NGT\Ewus\Contracts\Parser as ParserContract;
@@ -159,6 +160,17 @@ class CheckRequest extends Request implements RequestContract
     }
 
     /**
+     * Get request date.
+     *
+     * @return  DateTimeInterface
+     * @codeCoverageIgnore
+     */
+    protected function getRequestDate(): DateTimeInterface
+    {
+        return new DateTime();
+    }
+
+    /**
      * @inheritDoc
      */
     protected function envelopeNamespaces(): array
@@ -202,7 +214,7 @@ class CheckRequest extends Request implements RequestContract
                     'com:localname' => 'checkCWU',
                     'com:version'   => '5.0',
                 ],
-                'brok:date'    => date(DateTimeInterface::RFC3339_EXTENDED),
+                'brok:date'    => $this->getRequestDate()->format(DateTimeInterface::RFC3339_EXTENDED),
                 'brok:payload' => [
                     'brok:textload' => [
                         'ewus:status_cwu_pyt' => [

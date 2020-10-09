@@ -1,0 +1,102 @@
+<?php
+declare(strict_types=1);
+
+namespace Tests\Unit\Requests;
+
+use InvalidArgumentException;
+use NGT\Ewus\Enums\OperatorType;
+use NGT\Ewus\Parsers\LoginParser;
+use NGT\Ewus\Requests\LoginRequest;
+use NGT\Ewus\Services\AuthService;
+use Tests\TestCase;
+
+class LoginRequestTest extends TestCase
+{
+    /**
+     * The request instance.
+     *
+     * @var  \NGT\Ewus\Requests\LoginRequest
+     */
+    private $request;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->request = new LoginRequest();
+    }
+
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::__construct
+     */
+    public function testConstructorWithParameters(): void
+    {
+        $this->request = new LoginRequest('15', 'TEST1', 'qwerty!@#');
+
+        $this->assertSame('15', $this->request->getDomain());
+        $this->assertSame('TEST1', $this->request->getLogin());
+        $this->assertSame('qwerty!@#', $this->request->getPassword());
+    }
+
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::getParser
+     */
+    public function testDefinedParser(): void
+    {
+        $this->assertInstanceOf(LoginParser::class, $this->request->getParser());
+    }
+
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::getService
+     */
+    public function testDefinedService(): void
+    {
+        $this->assertInstanceOf(AuthService::class, $this->request->getService());
+    }
+
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::setPassword
+     */
+    public function testPasswordSetter(): void
+    {
+        $this->assertSame($this->request->setPassword('test'), $this->request);
+    }
+
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::getPassword
+     */
+    public function testPasswordGetter(): void
+    {
+        $this->request->setPassword('test');
+
+        $this->assertSame('test', $this->request->getPassword());
+    }
+
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::getPassword
+     */
+    public function testPasswordGetterWithoutSetter(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        $this->request->getPassword();
+    }
+
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::envelopeNamespaces
+     * @covers \NGT\Ewus\Requests\LoginRequest::envelopeHeader
+     * @covers \NGT\Ewus\Requests\LoginRequest::envelopeBody
+     */
+    public function testEnvelope(): void
+    {
+        $this->request->setDomain('01');
+        $this->request->setLogin('TEST1');
+        $this->request->setPassword('qwerty!@#');
+        $this->request->setOperatorId('12345');
+        $this->request->setOperatorType(OperatorType::PROVIDER);
+
+        $xml = $this->xmlRequest('LoginRequest.xml');
+
+        $this->assertSame($xml, $this->request->toXml());
+    }
+}

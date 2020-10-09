@@ -247,7 +247,7 @@ class CheckParser extends Parser implements ParserContract
      * Parse patient notes.
      *
      * @param   \NGT\Ewus\Support\Xml  $xml
-     * @return  array[]
+     * @return  string[][]
      */
     private function parsePatientNotes(Xml $xml): array
     {
