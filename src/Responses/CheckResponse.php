@@ -284,7 +284,7 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the patient notes.
      *
-     * @param  array[]  $patientNotes
+     * @param  string[][]  $patientNotes
      */
     public function setPatientNotes(array $patientNotes): self
     {
@@ -436,7 +436,7 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the patient notes.
      *
-     * @return  array[]
+     * @return  string[][]
      */
     public function getPatientNotes(): array
     {

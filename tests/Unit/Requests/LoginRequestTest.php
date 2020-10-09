@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\Unit;
+namespace Tests\Unit\Requests;
 
 use InvalidArgumentException;
 use NGT\Ewus\Enums\OperatorType;
@@ -26,6 +26,9 @@ class LoginRequestTest extends TestCase
         $this->request = new LoginRequest();
     }
 
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::__construct
+     */
     public function testConstructorWithParameters(): void
     {
         $this->request = new LoginRequest('15', 'TEST1', 'qwerty!@#');
@@ -35,21 +38,33 @@ class LoginRequestTest extends TestCase
         $this->assertSame('qwerty!@#', $this->request->getPassword());
     }
 
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::getParser
+     */
     public function testDefinedParser(): void
     {
         $this->assertInstanceOf(LoginParser::class, $this->request->getParser());
     }
 
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::getService
+     */
     public function testDefinedService(): void
     {
         $this->assertInstanceOf(AuthService::class, $this->request->getService());
     }
 
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::setPassword
+     */
     public function testPasswordSetter(): void
     {
         $this->assertSame($this->request->setPassword('test'), $this->request);
     }
 
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::getPassword
+     */
     public function testPasswordGetter(): void
     {
         $this->request->setPassword('test');
@@ -57,6 +72,9 @@ class LoginRequestTest extends TestCase
         $this->assertSame('test', $this->request->getPassword());
     }
 
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::getPassword
+     */
     public function testPasswordGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -64,6 +82,11 @@ class LoginRequestTest extends TestCase
         $this->request->getPassword();
     }
 
+    /**
+     * @covers \NGT\Ewus\Requests\LoginRequest::envelopeNamespaces
+     * @covers \NGT\Ewus\Requests\LoginRequest::envelopeHeader
+     * @covers \NGT\Ewus\Requests\LoginRequest::envelopeBody
+     */
     public function testEnvelope(): void
     {
         $this->request->setDomain('01');

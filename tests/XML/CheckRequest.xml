@@ -1,0 +1,24 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://xml.kamsoft.pl/ws/common" xmlns:brok="http://xml.kamsoft.pl/ws/broker">
+  <soapenv:Header>
+    <com:session id="12345678" xmlns:ns1="http://xml.kamsoft.pl/ws/common"/>
+    <com:authToken id="qwertyuiop" xmlns:ns1="http://xml.kamsoft.pl/ws/common"/>
+  </soapenv:Header>
+  <soapenv:Body>
+    <brok:executeService>
+      <com:location>
+        <com:namespace>nfz.gov.pl/ws/broker/cwu</com:namespace>
+        <com:localname>checkCWU</com:localname>
+        <com:version>5.0</com:version>
+      </com:location>
+      <brok:date>2020-01-01T00:00:00.000+00:00</brok:date>
+      <brok:payload>
+        <brok:textload>
+          <ewus:status_cwu_pyt xmlns:ewus="https://ewus.nfz.gov.pl/ws/broker/ewus/status_cwu/v5">
+            <ewus:numer_pesel>12345678901</ewus:numer_pesel>
+            <ewus:system_swiad nazwa="ngt/ewus - PHP implementation for eWU&#x15A; service" wersja="0.2.0"/>
+          </ewus:status_cwu_pyt>
+        </brok:textload>
+      </brok:payload>
+    </brok:executeService>
+  </soapenv:Body>
+</soapenv:Envelope>

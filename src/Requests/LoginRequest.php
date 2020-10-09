@@ -7,7 +7,6 @@ use InvalidArgumentException;
 use NGT\Ewus\Contracts\Parser as ParserContract;
 use NGT\Ewus\Contracts\Request as RequestContract;
 use NGT\Ewus\Contracts\Service as ServiceContract;
-use NGT\Ewus\Enums\OperatorType;
 use NGT\Ewus\Parsers\LoginParser;
 use NGT\Ewus\Services\AuthService;
 use NGT\Ewus\Support\XmlNamespace;
@@ -16,6 +15,13 @@ use NGT\Ewus\Traits\Authorizeable;
 class LoginRequest extends Request implements RequestContract
 {
     use Authorizeable;
+
+    /**
+     * The operator password.
+     *
+     * @var  string
+     */
+    private $password;
 
     /**
      * The login request constructor.

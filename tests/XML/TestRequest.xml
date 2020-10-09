@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ngt="https://xml.nextgen-tech.pl/soap/">
+  <soapenv:Header>
+    <ngt:test_header>test_value</ngt:test_header>
+  </soapenv:Header>
+  <soapenv:Body>
+    <ngt:test_body>test_value</ngt:test_body>
+  </soapenv:Body>
+</soapenv:Envelope>

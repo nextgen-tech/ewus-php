@@ -20,17 +20,28 @@ class HttpConnection extends Connection implements ConnectionContract
     protected $client;
 
     /**
-     * Get the SOAP client for current service.
+     * Get the HTTP client.
      *
      * @return  \GuzzleHttp\Client
      */
     public function getClient(): Client
     {
         if ($this->client === null) {
-            $this->client = new Client();
+            $this->client = $this->makeClient();
         }
 
         return $this->client;
+    }
+
+    /**
+     * Make the HTTP client.
+     *
+     * @return  \GuzzleHttp\Client
+     * @codeCoverageIgnore
+     */
+    protected function makeClient(): Client
+    {
+        return new Client();
     }
 
     /**

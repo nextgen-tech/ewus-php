@@ -10,37 +10,37 @@ class LoginResponse extends Response implements ResponseContract
     /**
      * The session identificator.
      *
-     * @var  string|null
+     * @var  string
      */
     protected $sessionId;
 
     /**
      * The authorization token.
      *
-     * @var  string|null
+     * @var  string
      */
     protected $token;
 
     /**
      * The login code.
      *
-     * @var  string|null
+     * @var  string
      */
     protected $loginCode;
 
     /**
      * The login message.
      *
-     * @var  string|null
+     * @var  string
      */
     protected $loginMessage;
 
     /**
      * Set session identificator.
      *
-     * @param  string|null  $sessionId
+     * @param  string  $sessionId
      */
-    public function setSessionId(?string $sessionId): self
+    public function setSessionId(string $sessionId): self
     {
         $this->sessionId = $sessionId;
 
@@ -50,9 +50,9 @@ class LoginResponse extends Response implements ResponseContract
     /**
      * Set autorization token.
      *
-     * @param  string|null  $token
+     * @param  string  $token
      */
-    public function setToken(?string $token): self
+    public function setToken(string $token): self
     {
         $this->token = $token;
 
@@ -62,9 +62,9 @@ class LoginResponse extends Response implements ResponseContract
     /**
      * Set login code.
      *
-     * @param  string|null  $loginCode
+     * @param  string  $loginCode
      */
-    public function setLoginCode(?string $loginCode): self
+    public function setLoginCode(string $loginCode): self
     {
         $this->loginCode = $loginCode;
 
@@ -74,9 +74,9 @@ class LoginResponse extends Response implements ResponseContract
     /**
      * Set login message.
      *
-     * @param  string|null  $loginMessage
+     * @param  string  $loginMessage
      */
-    public function setLoginMessage(?string $loginMessage): self
+    public function setLoginMessage(string $loginMessage): self
     {
         $this->loginMessage = $loginMessage;
 
@@ -86,9 +86,9 @@ class LoginResponse extends Response implements ResponseContract
     /**
      * Get session identificator.
      *
-     * @return  string|null
+     * @return  string
      */
-    public function getSessionId(): ?string
+    public function getSessionId(): string
     {
         return $this->sessionId;
     }
@@ -96,9 +96,9 @@ class LoginResponse extends Response implements ResponseContract
     /**
      * Get authorization token.
      *
-     * @return  string|null
+     * @return  string
      */
-    public function getToken(): ?string
+    public function getToken(): string
     {
         return $this->token;
     }
@@ -106,9 +106,9 @@ class LoginResponse extends Response implements ResponseContract
     /**
      * Get login code.
      *
-     * @return  string|null
+     * @return  string
      */
-    public function getLoginCode(): ?string
+    public function getLoginCode(): string
     {
         return $this->loginCode;
     }
@@ -116,9 +116,9 @@ class LoginResponse extends Response implements ResponseContract
     /**
      * Get login message.
      *
-     * @return  string|null
+     * @return  string
      */
-    public function getLoginMessage(): ?string
+    public function getLoginMessage(): string
     {
         return $this->loginMessage;
     }
