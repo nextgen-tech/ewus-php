@@ -23,17 +23,11 @@ class ChangePasswordResponseTest extends TestCase
         $this->response = new ChangePasswordResponse(new ChangePasswordRequest(), '');
     }
 
-    /**
-     * @covers \NGT\Ewus\Responses\ChangePasswordResponse::setChangePasswordMessage
-     */
     public function testChangePasswordMessageSetter(): void
     {
         $this->assertSame($this->response->setChangePasswordMessage('test'), $this->response);
     }
 
-    /**
-     * @covers \NGT\Ewus\Responses\ChangePasswordResponse::getChangePasswordMessage
-     */
     public function testChangePasswordMessageGetter(): void
     {
         $this->response->setChangePasswordMessage('test');

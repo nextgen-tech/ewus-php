@@ -23,17 +23,11 @@ class LogoutResponseTest extends TestCase
         $this->response = new LogoutResponse(new LogoutRequest(), '');
     }
 
-    /**
-     * @covers \NGT\Ewus\Responses\LogoutResponse::setLogoutMessage
-     */
     public function testLogoutMessageSetter(): void
     {
         $this->assertSame($this->response->setLogoutMessage('test'), $this->response);
     }
 
-    /**
-     * @covers \NGT\Ewus\Responses\LogoutResponse::getLogoutMessage
-     */
     public function testLogoutMessageGetter(): void
     {
         $this->response->setLogoutMessage('test');

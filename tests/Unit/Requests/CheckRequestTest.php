@@ -27,9 +27,6 @@ class CheckRequestTest extends TestCase
         $this->request = new CheckRequest();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::__construct
-     */
     public function testConstructorWithParameters(): void
     {
         $this->request = new CheckRequest('12345678', 'qwertyuiop', '12345678901');
@@ -39,33 +36,21 @@ class CheckRequestTest extends TestCase
         $this->assertSame('12345678901', $this->request->getPesel());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::getParser
-     */
     public function testDefinedParser(): void
     {
         $this->assertInstanceOf(CheckParser::class, $this->request->getParser());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::getService
-     */
     public function testDefinedService(): void
     {
         $this->assertInstanceOf(BrokerService::class, $this->request->getService());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::setSessionId
-     */
     public function testSessionIdSetter(): void
     {
         $this->assertSame($this->request->setSessionId('12345678'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::getSessionId
-     */
     public function testSessionIdGetter(): void
     {
         $this->request->setSessionId('12345678');
@@ -73,9 +58,6 @@ class CheckRequestTest extends TestCase
         $this->assertSame('12345678', $this->request->getSessionId());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::getSessionId
-     */
     public function testSessionIdGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -83,17 +65,11 @@ class CheckRequestTest extends TestCase
         $this->request->getSessionId();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::setToken
-     */
     public function testTokenSetter(): void
     {
         $this->assertSame($this->request->setToken('qwertyuiop'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::getToken
-     */
     public function testTokenGetter(): void
     {
         $this->request->setToken('qwertyuiop');
@@ -101,9 +77,6 @@ class CheckRequestTest extends TestCase
         $this->assertSame('qwertyuiop', $this->request->getToken());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::getToken
-     */
     public function testTokenGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -111,17 +84,11 @@ class CheckRequestTest extends TestCase
         $this->request->getToken();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::setPesel
-     */
     public function testPeselSetter(): void
     {
         $this->assertSame($this->request->setPesel('12345678901'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::getPesel
-     */
     public function testPeselGetter(): void
     {
         $this->request->setPesel('12345678901');
@@ -129,9 +96,6 @@ class CheckRequestTest extends TestCase
         $this->assertSame('12345678901', $this->request->getPesel());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::getPesel
-     */
     public function testPeselGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -139,11 +103,6 @@ class CheckRequestTest extends TestCase
         $this->request->getPesel();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\CheckRequest::envelopeNamespaces
-     * @covers \NGT\Ewus\Requests\CheckRequest::envelopeHeader
-     * @covers \NGT\Ewus\Requests\CheckRequest::envelopeBody
-     */
     public function testEnvelope(): void
     {
         $this->request->setSessionId('12345678');

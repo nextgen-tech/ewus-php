@@ -19,66 +19,21 @@ class CheckParser extends Parser implements ParserContract
         $xml->registerNamespace('ewus');
 
         $response = new CheckResponse($this->request, $xml->getXml());
-
-        if (($operationDate = $this->parseOperationDate($xml)) !== null) {
-            $response->setOperationDate($operationDate);
-        }
-
-        if (($operationId = $this->parseOperationId($xml)) !== null) {
-            $response->setOperationId($operationId);
-        }
-
-        if (($systemName = $this->parseSystemName($xml)) !== null) {
-            $response->setSystemName($systemName);
-        }
-
-        if (($systemVersion = $this->parseSystemVersion($xml)) !== null) {
-            $response->setSystemVersion($systemVersion);
-        }
-
-        if (($status = $this->parseStatus($xml)) !== null) {
-            $response->setStatus($status);
-        }
-
-        if (($operatorId = $this->parseOperatorId($xml)) !== null) {
-            $response->setOperatorId($operatorId);
-        }
-
-        if (($operatorDomain = $this->parseOperatorDomain($xml)) !== null) {
-            $response->setOperatorDomain($operatorDomain);
-        }
-
-        if (($operatorExternalId = $this->parseOperatorExternalId($xml)) !== null) {
-            $response->setOperatorExternalId($operatorExternalId);
-        }
-
-        if (($expirationDate = $this->parseExpirationDate($xml)) !== null) {
-            $response->setExpirationDate($expirationDate);
-        }
-
-        if (($insuranceStatus = $this->parseInsuranceStatus($xml)) !== null) {
-            $response->setInsuranceStatus($insuranceStatus);
-        }
-
-        if (($prescriptionSymbol = $this->parsePrescriptionSymbol($xml)) !== null) {
-            $response->setPrescriptionSymbol($prescriptionSymbol);
-        }
-
-        if (($patientPesel = $this->parsePatientPesel($xml)) !== null) {
-            $response->setPatientPesel($patientPesel);
-        }
-
-        if (($patientFirstName = $this->parsePatientFirstName($xml)) !== null) {
-            $response->setPatientFirstName($patientFirstName);
-        }
-
-        if (($patientLastName = $this->parsePatientLastName($xml)) !== null) {
-            $response->setPatientLastName($patientLastName);
-        }
-
-        if (($patientNotes = $this->parsePatientNotes($xml)) !== null) {
-            $response->setPatientNotes($patientNotes);
-        }
+        $response->setOperationDate($this->parseOperationDate($xml));
+        $response->setOperationId($this->parseOperationId($xml));
+        $response->setSystemName($this->parseSystemName($xml));
+        $response->setSystemVersion($this->parseSystemVersion($xml));
+        $response->setStatus($this->parseStatus($xml));
+        $response->setOperatorId($this->parseOperatorId($xml));
+        $response->setOperatorDomain($this->parseOperatorDomain($xml));
+        $response->setOperatorExternalId($this->parseOperatorExternalId($xml));
+        $response->setExpirationDate($this->parseExpirationDate($xml));
+        $response->setInsuranceStatus($this->parseInsuranceStatus($xml));
+        $response->setPrescriptionSymbol($this->parsePrescriptionSymbol($xml));
+        $response->setPatientPesel($this->parsePatientPesel($xml));
+        $response->setPatientFirstName($this->parsePatientFirstName($xml));
+        $response->setPatientLastName($this->parsePatientLastName($xml));
+        $response->setPatientNotes($this->parsePatientNotes($xml));
 
         return $response;
     }

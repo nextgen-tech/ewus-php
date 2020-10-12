@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace NGT\Ewus\Parsers;
 
-use Exception;
+use InvalidArgumentException;
 use NGT\Ewus\Contracts\Parser as ParserContract;
 use NGT\Ewus\Contracts\Response;
 use NGT\Ewus\Responses\LoginResponse;
@@ -32,7 +32,7 @@ class LoginParser extends Parser implements ParserContract
         $node = $xml->get('//com:session');
 
         if ($node === null) {
-            throw new Exception();
+            throw new InvalidArgumentException('Missing the "com:session" tag in parsed XML.');
         }
 
         return $node->getAttribute('id');
@@ -43,7 +43,7 @@ class LoginParser extends Parser implements ParserContract
         $node = $xml->get('//com:authToken');
 
         if ($node === null) {
-            throw new Exception();
+            throw new InvalidArgumentException('Missing the "com:authToken" tag in parsed XML.');
         }
 
         return $node->getAttribute('id');
@@ -61,7 +61,7 @@ class LoginParser extends Parser implements ParserContract
         $data    = $this->parseLoginRawData($xml);
 
         if (preg_match($pattern, $data, $matches) !== 1) {
-            throw new Exception();
+            throw new InvalidArgumentException('Invalid login return value.');
         }
 
         return [
@@ -75,7 +75,7 @@ class LoginParser extends Parser implements ParserContract
         $node = $xml->get('//auth:loginReturn');
 
         if ($node === null) {
-            throw new Exception();
+            throw new InvalidArgumentException('Missing the "auth:loginReturn" tag in parsed XML.');
         }
 
         return $node->nodeValue;

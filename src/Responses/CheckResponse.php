@@ -11,114 +11,114 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * The operation date.
      *
-     * @var  DateTimeInterface
+     * @var  DateTimeInterface|null
      */
     protected $operationDate;
 
     /**
      * The operation identificator.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $operationId;
 
     /**
      * The system (server application) name.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $systemName;
 
     /**
      * The system (server application) version.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $systemVersion;
 
     /**
      * The status of data in remote system.
      *
-     * @var  int
+     * @var  int|null
      */
     protected $status;
 
     /**
      * The operator identificator.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $operatorId;
 
     /**
      * The operator domain.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $operatorDomain;
 
     /**
      * The operator external identificator.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $operatorExternalId;
 
     /**
      * The expiration date of check.
      *
-     * @var  DateTimeInterface
+     * @var  DateTimeInterface|null
      */
     protected $expirationDate;
 
     /**
      * The status of patient insurance.
      *
-     * @var  int
+     * @var  int|null
      */
     protected $insuranceStatus;
 
     /**
      * The prescription symbol.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $prescriptionSymbol;
 
     /**
      * The patient PESEL.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $patientPesel;
 
     /**
      * The patient first name.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $patientFirstName;
 
     /**
      * The patient last name.
      *
-     * @var  string
+     * @var  string|null
      */
     protected $patientLastName;
 
     /**
      * The patient notes.
      *
-     * @var  array[]
+     * @var  string[][]
      */
     protected $patientNotes = [];
 
     /**
      * Set the operation date.
      *
-     * @param  DateTimeInterface  $operationDate
+     * @param  DateTimeInterface|null  $operationDate
      */
-    public function setOperationDate(DateTimeInterface $operationDate): self
+    public function setOperationDate(?DateTimeInterface $operationDate): self
     {
         $this->operationDate = $operationDate;
 
@@ -128,9 +128,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the operation identificator.
      *
-     * @param  string  $operationId
+     * @param  string|null  $operationId
      */
-    public function setOperationId(string $operationId): self
+    public function setOperationId(?string $operationId): self
     {
         $this->operationId = $operationId;
 
@@ -140,9 +140,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the system (server application) name.
      *
-     * @param  string  $systemName
+     * @param  string|null  $systemName
      */
-    public function setSystemName(string $systemName): self
+    public function setSystemName(?string $systemName): self
     {
         $this->systemName = $systemName;
 
@@ -152,9 +152,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the system (server application) version.
      *
-     * @param  string  $systemVersion
+     * @param  string|null  $systemVersion
      */
-    public function setSystemVersion(string $systemVersion): self
+    public function setSystemVersion(?string $systemVersion): self
     {
         $this->systemVersion = $systemVersion;
 
@@ -164,9 +164,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the status of data in remote system.
      *
-     * @param  int  $status
+     * @param  int|null  $status
      */
-    public function setStatus(int $status): self
+    public function setStatus(?int $status): self
     {
         $this->status = $status;
 
@@ -176,9 +176,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the operator identificator.
      *
-     * @param  string  $operatorId
+     * @param  string|null  $operatorId
      */
-    public function setOperatorId(string $operatorId): self
+    public function setOperatorId(?string $operatorId): self
     {
         $this->operatorId = $operatorId;
 
@@ -188,9 +188,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the operator domain.
      *
-     * @param  string  $operatorDomain
+     * @param  string|null  $operatorDomain
      */
-    public function setOperatorDomain(string $operatorDomain): self
+    public function setOperatorDomain(?string $operatorDomain): self
     {
         $this->operatorDomain = $operatorDomain;
 
@@ -200,9 +200,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the operator external identificator.
      *
-     * @param  string  $operatorExternalId
+     * @param  string|null  $operatorExternalId
      */
-    public function setOperatorExternalId(string $operatorExternalId): self
+    public function setOperatorExternalId(?string $operatorExternalId): self
     {
         $this->operatorExternalId = $operatorExternalId;
 
@@ -212,9 +212,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the expiration date of check.
      *
-     * @param  DateTimeInterface  $expirationDate
+     * @param  DateTimeInterface|null  $expirationDate
      */
-    public function setExpirationDate(DateTimeInterface $expirationDate): self
+    public function setExpirationDate(?DateTimeInterface $expirationDate): self
     {
         $this->expirationDate = $expirationDate;
 
@@ -224,9 +224,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the status of patient insurance.
      *
-     * @param  int  $insuranceStatus
+     * @param  int|null  $insuranceStatus
      */
-    public function setInsuranceStatus(int $insuranceStatus): self
+    public function setInsuranceStatus(?int $insuranceStatus): self
     {
         $this->insuranceStatus = $insuranceStatus;
 
@@ -236,9 +236,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the prescription symbol.
      *
-     * @param  string  $prescriptionSymbol
+     * @param  string|null  $prescriptionSymbol
      */
-    public function setPrescriptionSymbol(string $prescriptionSymbol): self
+    public function setPrescriptionSymbol(?string $prescriptionSymbol): self
     {
         $this->prescriptionSymbol = $prescriptionSymbol;
 
@@ -248,9 +248,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the patient PESEL.
      *
-     * @param  string  $patientPesel
+     * @param  string|null  $patientPesel
      */
-    public function setPatientPesel(string $patientPesel): self
+    public function setPatientPesel(?string $patientPesel): self
     {
         $this->patientPesel = $patientPesel;
 
@@ -260,9 +260,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the patient first name.
      *
-     * @param  string  $patientFirstName
+     * @param  string|null  $patientFirstName
      */
-    public function setPatientFirstName(string $patientFirstName): self
+    public function setPatientFirstName(?string $patientFirstName): self
     {
         $this->patientFirstName = $patientFirstName;
 
@@ -272,9 +272,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Set the patient last name.
      *
-     * @param  string  $patientLastName
+     * @param  string|null  $patientLastName
      */
-    public function setPatientLastName(string $patientLastName): self
+    public function setPatientLastName(?string $patientLastName): self
     {
         $this->patientLastName = $patientLastName;
 
@@ -296,9 +296,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the operation date.
      *
-     * @return  DateTimeInterface
+     * @return  DateTimeInterface|null
      */
-    public function getOperationDate(): DateTimeInterface
+    public function getOperationDate(): ?DateTimeInterface
     {
         return $this->operationDate;
     }
@@ -306,9 +306,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the operation identificator.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getOperationId(): string
+    public function getOperationId(): ?string
     {
         return $this->operationId;
     }
@@ -316,9 +316,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the system (server application) name.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getSystemName(): string
+    public function getSystemName(): ?string
     {
         return $this->systemName;
     }
@@ -326,9 +326,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the system (server application) version.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getSystemVersion(): string
+    public function getSystemVersion(): ?string
     {
         return $this->systemVersion;
     }
@@ -336,9 +336,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the status of data in remote system.
      *
-     * @return int
+     * @return int|null
      */
-    public function getStatus(): int
+    public function getStatus(): ?int
     {
         return $this->status;
     }
@@ -346,9 +346,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the operator identificator.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getOperatorId(): string
+    public function getOperatorId(): ?string
     {
         return $this->operatorId;
     }
@@ -356,9 +356,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the operator domain.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getOperatorDomain(): string
+    public function getOperatorDomain(): ?string
     {
         return $this->operatorDomain;
     }
@@ -366,9 +366,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the operator external identificator.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getOperatorExternalId(): string
+    public function getOperatorExternalId(): ?string
     {
         return $this->operatorExternalId;
     }
@@ -406,9 +406,9 @@ class CheckResponse extends Response implements ResponseContract
     /**
      * Get the patient PESEL.
      *
-     * @return  string
+     * @return  string|null
      */
-    public function getPatientPesel(): string
+    public function getPatientPesel(): ?string
     {
         return $this->patientPesel;
     }

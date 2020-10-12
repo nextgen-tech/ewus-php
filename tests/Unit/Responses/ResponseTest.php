@@ -24,11 +24,6 @@ class ResponseTest extends TestCase
         $this->response = new TestResponse(new TestRequest(), 'foo');
     }
 
-    /**
-     * @covers \NGT\Ewus\Responses\Response::__construct
-     * @covers \NGT\Ewus\Responses\Response::getRequest
-     * @covers \NGT\Ewus\Responses\Response::getXml
-     */
     public function testBaseRequest(): void
     {
         $this->response = new TestResponse(new TestRequest(), 'foo');

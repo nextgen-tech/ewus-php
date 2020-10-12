@@ -22,11 +22,6 @@ class RequestTest extends TestCase
         $this->request = new TestRequest();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\Request::envelopeNamespaces
-     * @covers \NGT\Ewus\Requests\Request::envelope
-     * @covers \NGT\Ewus\Requests\Request::toXml
-     */
     public function testEnvelopeGeneration(): void
     {
         $xml = $this->xmlRequest('TestRequest.xml');

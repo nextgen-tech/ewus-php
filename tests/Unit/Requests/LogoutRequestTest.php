@@ -25,9 +25,6 @@ class LogoutRequestTest extends TestCase
         $this->request = new LogoutRequest();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::__construct
-     */
     public function testConstructorWithParameters(): void
     {
         $this->request = new LogoutRequest('12345678', 'qwertyuiop');
@@ -36,33 +33,21 @@ class LogoutRequestTest extends TestCase
         $this->assertSame('qwertyuiop', $this->request->getToken());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::getParser
-     */
     public function testDefinedParser(): void
     {
         $this->assertInstanceOf(LogoutParser::class, $this->request->getParser());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::getService
-     */
     public function testDefinedService(): void
     {
         $this->assertInstanceOf(AuthService::class, $this->request->getService());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::setSessionId
-     */
     public function testSessionIdSetter(): void
     {
         $this->assertSame($this->request->setSessionId('12345678'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::getSessionId
-     */
     public function testSessionIdGetter(): void
     {
         $this->request->setSessionId('12345678');
@@ -70,9 +55,6 @@ class LogoutRequestTest extends TestCase
         $this->assertSame('12345678', $this->request->getSessionId());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::getSessionId
-     */
     public function testSessionIdGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -80,17 +62,11 @@ class LogoutRequestTest extends TestCase
         $this->request->getSessionId();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::setToken
-     */
     public function testTokenSetter(): void
     {
         $this->assertSame($this->request->setToken('qwertyuiop'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::getToken
-     */
     public function testTokenGetter(): void
     {
         $this->request->setToken('qwertyuiop');
@@ -98,9 +74,6 @@ class LogoutRequestTest extends TestCase
         $this->assertSame('qwertyuiop', $this->request->getToken());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::getToken
-     */
     public function testTokenGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -108,11 +81,6 @@ class LogoutRequestTest extends TestCase
         $this->request->getToken();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\LogoutRequest::envelopeNamespaces
-     * @covers \NGT\Ewus\Requests\LogoutRequest::envelopeHeader
-     * @covers \NGT\Ewus\Requests\LogoutRequest::envelopeBody
-     */
     public function testEnvelope(): void
     {
         $this->request->setSessionId('12345678');

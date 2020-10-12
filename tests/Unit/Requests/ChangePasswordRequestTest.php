@@ -26,9 +26,6 @@ class ChangePasswordRequestTest extends TestCase
         $this->request = new ChangePasswordRequest();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::__construct
-     */
     public function testConstructorWithParameters(): void
     {
         $this->request = new ChangePasswordRequest('12345678', 'qwertyuiop', '15', 'TEST1', 'qwerty!@#', 'asdfgh!@#');
@@ -41,33 +38,21 @@ class ChangePasswordRequestTest extends TestCase
         $this->assertSame('asdfgh!@#', $this->request->getNewPassword());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getParser
-     */
     public function testDefinedParser(): void
     {
         $this->assertInstanceOf(ChangePasswordParser::class, $this->request->getParser());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getService
-     */
     public function testDefinedService(): void
     {
         $this->assertInstanceOf(AuthService::class, $this->request->getService());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::setSessionId
-     */
     public function testSessionIdSetter(): void
     {
         $this->assertSame($this->request->setSessionId('12345678'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getSessionId
-     */
     public function testSessionIdGetter(): void
     {
         $this->request->setSessionId('12345678');
@@ -75,9 +60,6 @@ class ChangePasswordRequestTest extends TestCase
         $this->assertSame('12345678', $this->request->getSessionId());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getSessionId
-     */
     public function testSessionIdGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -85,17 +67,11 @@ class ChangePasswordRequestTest extends TestCase
         $this->request->getSessionId();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::setToken
-     */
     public function testTokenSetter(): void
     {
         $this->assertSame($this->request->setToken('qwertyuiop'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getToken
-     */
     public function testTokenGetter(): void
     {
         $this->request->setToken('qwertyuiop');
@@ -103,9 +79,6 @@ class ChangePasswordRequestTest extends TestCase
         $this->assertSame('qwertyuiop', $this->request->getToken());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getToken
-     */
     public function testTokenGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -113,17 +86,11 @@ class ChangePasswordRequestTest extends TestCase
         $this->request->getToken();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::setOldPassword
-     */
     public function testOldPasswordSetter(): void
     {
         $this->assertSame($this->request->setOldPassword('qwerty!@#'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getOldPassword
-     */
     public function testOldPasswordGetter(): void
     {
         $this->request->setOldPassword('qwerty!@#');
@@ -131,9 +98,6 @@ class ChangePasswordRequestTest extends TestCase
         $this->assertSame('qwerty!@#', $this->request->getOldPassword());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getOldPassword
-     */
     public function testOldPasswordGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -141,17 +105,11 @@ class ChangePasswordRequestTest extends TestCase
         $this->request->getOldPassword();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::setNewPassword
-     */
     public function testNewPasswordSetter(): void
     {
         $this->assertSame($this->request->setNewPassword('asdfgh!@#'), $this->request);
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getNewPassword
-     */
     public function testNewPasswordGetter(): void
     {
         $this->request->setNewPassword('asdfgh!@#');
@@ -159,9 +117,6 @@ class ChangePasswordRequestTest extends TestCase
         $this->assertSame('asdfgh!@#', $this->request->getNewPassword());
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::getNewPassword
-     */
     public function testNewPasswordGetterWithoutSetter(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -169,11 +124,6 @@ class ChangePasswordRequestTest extends TestCase
         $this->request->getNewPassword();
     }
 
-    /**
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::envelopeNamespaces
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::envelopeHeader
-     * @covers \NGT\Ewus\Requests\ChangePasswordRequest::envelopeBody
-     */
     public function testEnvelope(): void
     {
         $this->request->setSessionId('12345678');
