@@ -1,5 +1,9 @@
 # PHP eWUŚ changelog
 
+## v1.0.0 - 2020-10-12
+
+* First release
+
 ## v0.3.0 - 2020-09-29
 
 * Change namespace
