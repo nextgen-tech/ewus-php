@@ -48,7 +48,10 @@ class CheckResponseTest extends TestCase
     public function testOperationDateGetter(): void
     {
         $this->response->setOperationDate($this->mockOperationDate());
-        $this->assertSame('2020-01-01 00:00:00', $this->response->getOperationDate()->format('Y-m-d H:i:s'));
+
+        /** @var DateTimeInterface */
+        $operationDate = $this->response->getOperationDate();
+        $this->assertSame('2020-01-01 00:00:00', $operationDate->format('Y-m-d H:i:s'));
     }
 
     public function testOperationIdSetter(): void
@@ -136,7 +139,10 @@ class CheckResponseTest extends TestCase
     public function testExpirationDateGetter(): void
     {
         $this->response->setExpirationDate($this->mockExpirationDate());
-        $this->assertSame('2020-01-01 23:59:59', $this->response->getExpirationDate()->format('Y-m-d H:i:s'));
+
+        /** @var DateTimeInterface */
+        $expirationDate = $this->response->getExpirationDate();
+        $this->assertSame('2020-01-01 23:59:59', $expirationDate->format('Y-m-d H:i:s'));
     }
 
     public function testInsuranceStatusSetter(): void

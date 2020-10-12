@@ -65,12 +65,15 @@ class CheckTest extends TestCase
     {
         $response = $this->check('79060804378');
 
+        /** @var string */
+        $operationId = $response->getOperationId();
+
         $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
         /** @var DateTimeInterface */
         $expirationDate = $response->getExpirationDate();
 
         $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
-        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
         $this->assertSame('eWUS', $response->getSystemName());
         $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
@@ -90,12 +93,15 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00032948271');
 
+        /** @var string */
+        $operationId = $response->getOperationId();
+
         $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
         /** @var DateTimeInterface */
         $expirationDate = $response->getExpirationDate();
 
         $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
-        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
         $this->assertSame('eWUS', $response->getSystemName());
         $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
@@ -124,12 +130,15 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00102721595');
 
+        /** @var string */
+        $operationId = $response->getOperationId();
+
         $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
         /** @var DateTimeInterface */
         $expirationDate = $response->getExpirationDate();
 
         $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
-        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
         $this->assertSame('eWUS', $response->getSystemName());
         $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
@@ -158,12 +167,15 @@ class CheckTest extends TestCase
     {
         $response = $this->check('55021562501');
 
+        /** @var string */
+        $operationId = $response->getOperationId();
+
         $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
         /** @var DateTimeInterface */
         $expirationDate = $response->getExpirationDate();
 
         $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
-        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
         $this->assertSame('eWUS', $response->getSystemName());
         $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
@@ -183,12 +195,15 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00071274234');
 
+        /** @var string */
+        $operationId = $response->getOperationId();
+
         $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
         /** @var DateTimeInterface */
         $expirationDate = $response->getExpirationDate();
 
         $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
-        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
         $this->assertSame('eWUS', $response->getSystemName());
         $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
@@ -217,12 +232,15 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00092497177');
 
+        /** @var string */
+        $operationId = $response->getOperationId();
+
         $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
         /** @var DateTimeInterface */
         $expirationDate = $response->getExpirationDate();
 
         $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
-        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
         $this->assertSame('eWUS', $response->getSystemName());
         $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(1, $response->getStatus());
@@ -251,8 +269,11 @@ class CheckTest extends TestCase
     {
         $response = $this->check('01010153201');
 
+        /** @var string */
+        $operationId = $response->getOperationId();
+
         $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
-        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
         $this->assertSame('eWUS', $response->getSystemName());
         $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(0, $response->getStatus());
@@ -272,8 +293,11 @@ class CheckTest extends TestCase
     {
         $response = $this->check('00060958187');
 
+        /** @var string */
+        $operationId = $response->getOperationId();
+
         $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
-        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $response->getOperationId());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
         $this->assertSame('eWUS', $response->getSystemName());
         $this->assertSame('test', $response->getSystemVersion());
         $this->assertSame(-1, $response->getStatus());

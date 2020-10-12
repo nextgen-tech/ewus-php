@@ -3,7 +3,9 @@
 namespace Tests\Support;
 
 use NGT\Ewus\Contracts\Parser as ParserContract;
+use NGT\Ewus\Contracts\Response as ResponseContract;
 use NGT\Ewus\Parsers\Parser;
+use NGT\Ewus\Support\Xml;
 
 class TestParser extends Parser implements ParserContract
 {
