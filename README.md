@@ -10,9 +10,9 @@ This package is PHP implementation of eWUÅš (Elektroniczna Weryfikacja UprawnieÅ
 
 ## Requirements
 
-| Version |  PHP  |
-| ------- | ----- |
-|  0.0.1  | >=7.2 |
+| Version | PHP    |
+| ------- | ------ |
+| 1.x     | >= 7.3 |
 
 This package requires ext-dom to be installed on server. Optionally HTTP connection (via Guzzle) can be switched to native SOAP Client. In this case also ext-soap must be installed.
 
