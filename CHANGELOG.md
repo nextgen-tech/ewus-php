@@ -1,5 +1,9 @@
 # PHP eWUŚ changelog
 
+## v1.1.0 - 2020-10-13
+
+* Allow setting timeout to HTTP connection client (8db0aec)
+
 ## v1.0.0 - 2020-10-12
 
 * First release
