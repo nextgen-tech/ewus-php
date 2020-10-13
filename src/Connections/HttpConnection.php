@@ -41,7 +41,23 @@ class HttpConnection extends Connection implements ConnectionContract
      */
     protected function makeClient(): Client
     {
-        return new Client();
+        return new Client($this->getConfig());
+    }
+
+    /**
+     * Get client configuration.
+     *
+     * @return  mixed[]
+     */
+    protected function getConfig(): array
+    {
+        $config = [];
+
+        if (isset($this->config['timeout'])) {
+            $config[RequestOptions::TIMEOUT] = (int) $this->config['timeout'];
+        }
+
+        return $config;
     }
 
     /**

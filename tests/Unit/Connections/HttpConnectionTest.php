@@ -10,6 +10,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\RequestOptions;
 use NGT\Ewus\Connections\HttpConnection as BaseHttpConnection;
 use NGT\Ewus\Exceptions\ResponseException;
 use Tests\Support\TestRequest;
@@ -83,6 +84,19 @@ class HttpConnectionTest extends TestCase
 
         $this->connection->mockResponse('Invalid response');
         $this->connection->send($request->toXml());
+    }
+
+    public function testSettingTimeout(): void
+    {
+        $connection = new BaseHttpConnection();
+        $client     = $connection->getClient();
+
+        $this->assertNull($client->getConfig(RequestOptions::TIMEOUT));
+
+        $connection = new BaseHttpConnection(['timeout' => 123]);
+        $client     = $connection->getClient();
+
+        $this->assertSame(123, $client->getConfig(RequestOptions::TIMEOUT));
     }
 }
 
