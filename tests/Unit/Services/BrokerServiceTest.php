@@ -25,7 +25,7 @@ class BrokerServiceTest extends TestCase
     public function testProductionUrl(): void
     {
         $this->assertSame(
-            'https://ewus.nfz.gov.pl/ws-broker-server-ewus/services/ServiceBroker?wsdl',
+            'https://ewus.nfz.gov.pl/ws-broker-server-ewus/services/ServiceBroker',
             $this->service->getProductionUrl()
         );
     }
@@ -33,7 +33,7 @@ class BrokerServiceTest extends TestCase
     public function testSandboxUrl(): void
     {
         $this->assertSame(
-            'https://ewus.nfz.gov.pl/ws-broker-server-ewus-auth-test/services/ServiceBroker?wsdl',
+            'https://ewus.nfz.gov.pl/ws-broker-server-ewus-auth-test/services/ServiceBroker',
             $this->service->getSandboxUrl()
         );
     }

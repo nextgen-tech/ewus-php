@@ -25,7 +25,7 @@ class AuthServiceTest extends TestCase
     public function testProductionUrl(): void
     {
         $this->assertSame(
-            'https://ewus.nfz.gov.pl/ws-broker-server-ewus/services/Auth?wsdl',
+            'https://ewus.nfz.gov.pl/ws-broker-server-ewus/services/Auth',
             $this->service->getProductionUrl()
         );
     }
@@ -33,7 +33,7 @@ class AuthServiceTest extends TestCase
     public function testSandboxUrl(): void
     {
         $this->assertSame(
-            'https://ewus.nfz.gov.pl/ws-broker-server-ewus-auth-test/services/Auth?wsdl',
+            'https://ewus.nfz.gov.pl/ws-broker-server-ewus-auth-test/services/Auth',
             $this->service->getSandboxUrl()
         );
     }
