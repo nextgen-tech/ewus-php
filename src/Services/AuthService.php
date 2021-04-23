@@ -12,7 +12,7 @@ class AuthService implements Service
      */
     public function getProductionUrl(): string
     {
-        return 'https://ewus.nfz.gov.pl/ws-broker-server-ewus/services/Auth?wsdl';
+        return 'https://ewus.nfz.gov.pl/ws-broker-server-ewus/services/Auth';
     }
 
     /**
@@ -20,6 +20,6 @@ class AuthService implements Service
      */
     public function getSandboxUrl(): string
     {
-        return 'https://ewus.nfz.gov.pl/ws-broker-server-ewus-auth-test/services/Auth?wsdl';
+        return 'https://ewus.nfz.gov.pl/ws-broker-server-ewus-auth-test/services/Auth';
     }
 }

@@ -12,7 +12,7 @@ class BrokerService implements Service
      */
     public function getProductionUrl(): string
     {
-        return 'https://ewus.nfz.gov.pl/ws-broker-server-ewus/services/ServiceBroker?wsdl';
+        return 'https://ewus.nfz.gov.pl/ws-broker-server-ewus/services/ServiceBroker';
     }
 
     /**
@@ -20,6 +20,6 @@ class BrokerService implements Service
      */
     public function getSandboxUrl(): string
     {
-        return 'https://ewus.nfz.gov.pl/ws-broker-server-ewus-auth-test/services/ServiceBroker?wsdl';
+        return 'https://ewus.nfz.gov.pl/ws-broker-server-ewus-auth-test/services/ServiceBroker';
     }
 }
