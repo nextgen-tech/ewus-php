@@ -1,5 +1,9 @@
 # PHP eWUŚ changelog
 
+## v1.1.1 - 2021-04-23
+
+* Remove "?wsdl" parameter from services URL
+
 ## v1.1.0 - 2020-10-13
 
 * Allow setting timeout to HTTP connection client (8db0aec)
