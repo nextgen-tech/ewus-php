@@ -89,6 +89,43 @@ class CheckTest extends TestCase
         $this->assertEmpty($response->getPatientNotes());
     }
 
+    public function testCheckInsuredWithVaccine(): void
+    {
+        $response = $this->check('00081314722');
+
+        /** @var string */
+        $operationId = $response->getOperationId();
+
+        $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
+        /** @var DateTimeInterface */
+        $expirationDate = $response->getExpirationDate();
+
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
+        $this->assertSame(1, $response->getStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertSame($expectedExpirationDate->format('Y-m-d H:i:s'), $expirationDate->format('Y-m-d H:i:s'));
+        $this->assertSame(1, $response->getInsuranceStatus());
+        $this->assertSame('', $response->getPrescriptionSymbol());
+        $this->assertSame('00081314722', $response->getPatientPesel());
+        $this->assertSame('ImięTAK', $response->getPatientFirstName());
+        $this->assertSame('NazwiskoTAK', $response->getPatientLastName());
+
+        $notes = $response->getPatientNotes();
+        $note  = $notes[0];
+
+        $this->assertSame('ZASWIADCZENIE-COVID', $note['code']);
+        $this->assertSame('I', $note['level']);
+        $this->assertMatchesRegularExpression(
+            '/^Pacjentowi wystawiono zaświadczenie o szczepieniu dnia: \d{2}\-\d{2}\-\d{4}$/',
+            $note['value']
+        );
+    }
+
     public function testCheckInsuredWithQuarantine(): void
     {
         $response = $this->check('00032948271');
@@ -189,6 +226,43 @@ class CheckTest extends TestCase
         $this->assertSame('ImięNIE', $response->getPatientFirstName());
         $this->assertSame('NazwiskoNIE', $response->getPatientLastName());
         $this->assertEmpty($response->getPatientNotes());
+    }
+
+    public function testCheckUninsuredWithVaccine(): void
+    {
+        $response = $this->check('00021459812');
+
+        /** @var string */
+        $operationId = $response->getOperationId();
+
+        $expectedExpirationDate = (new DateTime('now'))->setTime(23, 59, 59);
+        /** @var DateTimeInterface */
+        $expirationDate = $response->getExpirationDate();
+
+        $this->assertInstanceOf(DateTimeInterface::class, $response->getOperationDate());
+        $this->assertMatchesRegularExpression('/^L\d{4}M\d{11}$/', $operationId);
+        $this->assertSame('eWUS', $response->getSystemName());
+        $this->assertSame('test', $response->getSystemVersion());
+        $this->assertSame(1, $response->getStatus());
+        $this->assertSame('3', $response->getOperatorId());
+        $this->assertSame('01', $response->getOperatorDomain());
+        $this->assertSame('TEST3', $response->getOperatorExternalId());
+        $this->assertSame($expectedExpirationDate->format('Y-m-d H:i:s'), $expirationDate->format('Y-m-d H:i:s'));
+        $this->assertSame(0, $response->getInsuranceStatus());
+        $this->assertSame('', $response->getPrescriptionSymbol());
+        $this->assertSame('00021459812', $response->getPatientPesel());
+        $this->assertSame('ImięNIE', $response->getPatientFirstName());
+        $this->assertSame('NazwiskoNIE', $response->getPatientLastName());
+
+        $notes = $response->getPatientNotes();
+        $note  = $notes[0];
+
+        $this->assertSame('ZASWIADCZENIE-COVID', $note['code']);
+        $this->assertSame('I', $note['level']);
+        $this->assertMatchesRegularExpression(
+            '/^Pacjentowi wystawiono zaświadczenie o szczepieniu dnia: \d{2}\-\d{2}\-\d{4}$/',
+            $note['value']
+        );
     }
 
     public function testCheckUninsuredWithQuarantine(): void
