@@ -1,5 +1,9 @@
 # PHP eWUŚ changelog
 
+## v1.1.2 - 2021-07-06
+
+* Add tests for vaccination information (b8b2cc1)
+
 ## v1.1.1 - 2021-04-23
 
 * Remove "?wsdl" parameter from services URL
