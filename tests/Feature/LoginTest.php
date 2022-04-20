@@ -45,6 +45,24 @@ class LoginTest extends TestCase
         $this->assertSame(22, mb_strlen($response->getToken() ?? ''));
     }
 
+    public function testLoginLek(): void
+    {
+        $request = new LoginRequest();
+        $request->setDomain('01');
+        $request->setLogin('TEST');
+        $request->setPassword('qwerty!@#');
+        $request->setOperatorId('');
+        $request->setOperatorType(OperatorType::DOCTOR);
+
+        /** @var \NGT\Ewus\Responses\LoginResponse */
+        $response = $this->handler->handle($request);
+
+        $this->assertSame('000', $response->getLoginCode());
+        $this->assertSame('Użytkownik został prawidłowo zalogowany.', $response->getLoginMessage());
+        $this->assertSame(32, mb_strlen($response->getSessionId() ?? ''));
+        $this->assertSame(22, mb_strlen($response->getToken() ?? ''));
+    }
+
     public function testLoginWithInvalidData(): void
     {
         $this->expectException(ResponseException::class);
