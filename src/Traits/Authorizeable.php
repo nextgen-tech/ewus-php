@@ -175,12 +175,14 @@ trait Authorizeable
                     'auth:stringValue' => $this->getOperatorType(),
                 ],
             ];
-            $credentials[] = [
-                'auth:name'  => $this->operatorIdentificatorKey(),
-                'auth:value' => [
-                    'auth:stringValue' => $this->getOperatorIdentificator(),
-                ],
-            ];
+            if ($this->getOperatorIdentificator()) {
+                $credentials[] = [
+                    'auth:name'  => $this->operatorIdentificatorKey(),
+                    'auth:value' => [
+                        'auth:stringValue' => $this->getOperatorIdentificator(),
+                    ],
+                ];
+            }
         }
 
         return $credentials;
