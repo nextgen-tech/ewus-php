@@ -41,11 +41,11 @@ class LoginTest extends TestCase
 
         $this->assertSame('000', $response->getLoginCode());
         $this->assertSame('Użytkownik został prawidłowo zalogowany.', $response->getLoginMessage());
-        $this->assertSame(32, mb_strlen($response->getSessionId() ?? ''));
-        $this->assertSame(22, mb_strlen($response->getToken() ?? ''));
+        $this->assertSame(32, strlen($response->getSessionId()));
+        $this->assertSame(22, strlen($response->getToken()));
     }
 
-    public function testLoginLek(): void
+    public function testLoginWithEmptyOperatorId(): void
     {
         $request = new LoginRequest();
         $request->setDomain('01');
@@ -59,8 +59,8 @@ class LoginTest extends TestCase
 
         $this->assertSame('000', $response->getLoginCode());
         $this->assertSame('Użytkownik został prawidłowo zalogowany.', $response->getLoginMessage());
-        $this->assertSame(32, mb_strlen($response->getSessionId() ?? ''));
-        $this->assertSame(22, mb_strlen($response->getToken() ?? ''));
+        $this->assertSame(32, strlen($response->getSessionId()));
+        $this->assertSame(22, strlen($response->getToken()));
     }
 
     public function testLoginWithInvalidData(): void
