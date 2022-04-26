@@ -1,5 +1,9 @@
 # PHP eWUŚ changelog
 
+## v1.1.3 - 2022-04-26
+
+* Allow empty operator identifier in credentials (#5)
+
 ## v1.1.2 - 2021-07-06
 
 * Add tests for vaccination information (e13b984)
