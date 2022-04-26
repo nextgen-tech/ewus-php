@@ -1,5 +1,9 @@
 # PHP eWUŚ changelog
 
+## v1.1.4 - 2022-04-26
+
+* Bump version in tests
+
 ## v1.1.3 - 2022-04-26
 
 * Allow empty operator identifier in credentials (#5)
