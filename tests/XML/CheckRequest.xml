@@ -15,7 +15,7 @@
         <brok:textload>
           <ewus:status_cwu_pyt xmlns:ewus="https://ewus.nfz.gov.pl/ws/broker/ewus/status_cwu/v5">
             <ewus:numer_pesel>12345678901</ewus:numer_pesel>
-            <ewus:system_swiad nazwa="ngt/ewus - PHP implementation for eWU&#x15A; service" wersja="1.1.0"/>
+            <ewus:system_swiad nazwa="ngt/ewus - PHP implementation for eWU&#x15A; service" wersja="1.1.4"/>
           </ewus:status_cwu_pyt>
         </brok:textload>
       </brok:payload>

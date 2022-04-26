@@ -18,7 +18,7 @@ final class Ewus
 {
     public const NAME = 'ngt/ewus - PHP implementation for eWUŚ service';
 
-    public const VERSION = '1.1.3';
+    public const VERSION = '1.1.4';
 
     /**
      * The connection instance.
